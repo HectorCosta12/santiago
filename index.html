@@ -1,1088 +1,1628 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espaço Santiago — Aveiro</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════
+       SEO — TÍTULO & META
+  ═══════════════════════════════════════ -->
+  <title>Barbearia em Aveiro | Espaço Santiago – Corte, Barba & Salão Femme</title>
+  <meta name="description" content="Espaço Santiago, a barbearia premium de Aveiro. Corte de cabelo, barba, tratamentos masculinos e o Espaço Santiago Femme — salão de beleza para a mulher moderna. Agende já pelo WhatsApp.">
+  <meta name="keywords" content="barbearia aveiro, corte cabelo aveiro, barba aveiro, espaço santiago, salão beleza aveiro, barbearia premium aveiro, espaço santiago femme, cabeleireiro aveiro">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Espaço Santiago">
+  <link rel="canonical" href="https://espacosantiago.pt/">
+
+  <!-- ═══════════════════════════════════════
+       OPEN GRAPH (Facebook / WhatsApp share)
+  ═══════════════════════════════════════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://espacosantiago.pt/">
+  <meta property="og:title" content="Espaço Santiago – Barbearia Premium em Aveiro">
+  <meta property="og:description" content="Corte, barba e tratamentos masculinos em Aveiro. Mais o Espaço Santiago Femme — salão de beleza para a mulher moderna. Reserve já.">
+  <meta property="og:image" content="https://espacosantiago.pt/og-image.jpg">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Espaço Santiago">
+
+  <!-- ═══════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Espaço Santiago – Barbearia Premium em Aveiro">
+  <meta name="twitter:description" content="Corte, barba e tratamentos masculinos. Espaço Santiago Femme. Aveiro, Portugal.">
+  <meta name="twitter:image" content="https://espacosantiago.pt/og-image.jpg">
+
+  <!-- ═══════════════════════════════════════
+       FAVICON (substituir pelos ficheiros reais)
+  ═══════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%232a2a2a'/><text y='24' x='4' font-size='22' fill='%23c9a84c' font-family='serif'>S</text></svg>">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- ═══════════════════════════════════════
+       SCHEMA.ORG — LOCAL BUSINESS
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Espaço Santiago",
+    "description": "Barbearia e salão de beleza premium em Aveiro. Corte, barba, tratamentos masculinos e femininos.",
+    "url": "https://espacosantiago.pt",
+    "telephone": "+351938162855",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aveiro",
+      "addressCountry": "PT"
+    },
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "19:00"},
+      {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "09:00","closes": "18:00"}
+    ],
+    "sameAs": ["https://www.instagram.com/espaco_santiago_aveiro"]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --charcoal: #2a2a2a;
-    --charcoal-light: #3d3d3d;
-    --cream: #f5f0e8;
-    --cream-dark: #e8e0d0;
-    --gold: #c9a84c;
-    --gold-light: #e8c97a;
-    --gold-dark: #a07830;
-    --femme-rose: #c4768a;
-    --femme-rose-light: #e8b4c2;
-    --femme-cream: #fdf6f0;
-    --white: #ffffff;
-    --text-light: #8a8a8a;
-  }
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  --charcoal:        #2a2a2a;
+  --charcoal-light:  #3d3d3d;
+  --charcoal-mid:    #222;
+  --charcoal-dark:   #1a1a1a;
+  --cream:           #f5f0e8;
+  --cream-dark:      #e8e0d0;
+  --gold:            #c9a84c;
+  --gold-light:      #e8c97a;
+  --gold-dark:       #a07830;
+  --femme-rose:      #c4768a;
+  --femme-rose-lt:   #e8b4c2;
+  --femme-cream:     #fdf6f0;
+  --white:           #ffffff;
+  --muted:           #8a8a8a;
+  --whatsapp:        #25d366;
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 0.25s var(--ease-out);
+}
 
-  html { scroll-behavior: smooth; }
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--charcoal);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; loading: lazy; }
+a { text-decoration: none; color: inherit; }
 
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--charcoal);
-    color: var(--cream);
-    overflow-x: hidden;
-  }
+/* ═══════════════════════════════════════════════════════════
+   SKIP LINK (acessibilidade)
+═══════════════════════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
 
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: transparent;
-    transition: background 0.4s, padding 0.4s;
-  }
-  nav.scrolled {
-    background: rgba(42,42,42,0.97);
-    backdrop-filter: blur(10px);
-    padding: 0.8rem 4rem;
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--cream);
-    text-decoration: none;
-    opacity: 0.85;
-    transition: opacity 0.2s, color 0.2s;
-  }
-  .nav-links a:hover { opacity: 1; color: var(--gold); }
-  .nav-cta {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--charcoal);
-    background: var(--gold);
-    padding: 0.6rem 1.4rem;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--gold-light); }
+/* ═══════════════════════════════════════════════════════════
+   TYPOGRAPHY HELPERS
+═══════════════════════════════════════════════════════════ */
+.section-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.gold-line {
+  width: 50px; height: 2px;
+  background: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.rose-line {
+  width: 50px; height: 2px;
+  background: var(--femme-rose);
+  margin-bottom: 1.5rem;
+}
 
-  /* HERO */
-  .hero {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr;
-    position: relative;
-    overflow: hidden;
-    background: var(--charcoal);
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 60px,
-        rgba(201,168,76,0.03) 60px,
-        rgba(201,168,76,0.03) 61px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 60px,
-        rgba(201,168,76,0.03) 60px,
-        rgba(201,168,76,0.03) 61px
-      );
-  }
-  .hero-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════════════ */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 1.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: background var(--transition-base), padding var(--transition-base), border-color var(--transition-base);
+}
+#nav.scrolled {
+  background: rgba(26,26,26,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem 4rem;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.85;
+  transition: opacity var(--transition-base), color var(--transition-base);
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width var(--transition-base);
+}
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: var(--gold);
+  padding: 0.65rem 1.5rem;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.nav-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--cream);
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
+  transform-origin: center;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(26,26,26,0.99);
+  backdrop-filter: blur(20px);
+  z-index: 190;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile-menu.open { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-base);
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 1rem 2.5rem;
+  margin-top: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.025) 60px, rgba(201,168,76,0.025) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.025) 60px, rgba(201,168,76,0.025) 61px);
+}
+.hero-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  z-index: 2;
+}
+.hero-icon {
+  width: 60px; height: 80px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s var(--ease-out) forwards;
+}
+.hero-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s var(--ease-out) forwards;
+}
+
+/* H1 — headline orientada a benefício */
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  opacity: 0;
+  animation: fadeUp 0.9s 0.55s var(--ease-out) forwards;
+}
+.hero-title span { color: var(--gold); font-style: italic; }
+
+.hero-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(245,240,232,0.8);
+  margin-top: 1.8rem;
+  letter-spacing: 0.06em;
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.7s var(--ease-out) forwards;
+}
+.hero-divider {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 2rem auto;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.85s var(--ease-out) forwards;
+}
+
+/* CTA acima da dobra */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 1s var(--ease-out) forwards;
+}
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  min-height: 48px;
+}
+.hero-btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+}
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  background: transparent;
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(245,240,232,0.35);
+  transition: all var(--transition-base);
+  min-height: 48px;
+}
+.hero-btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+.hero-microcopy {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 1.15s var(--ease-out) forwards;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1s 1.6s forwards;
+}
+.hero-scroll span {
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════════════════════ */
+.marquee-wrap {
+  background: var(--gold);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  aria-hidden: true;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+}
+.marquee-item {
+  display: inline-block;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  color: var(--charcoal);
+  padding: 0 2.5rem;
+}
+.marquee-dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: var(--charcoal);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════════════════ */
+.about {
+  padding: 8rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  background: var(--charcoal);
+}
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.about-text h2 em { color: var(--gold); font-style: italic; }
+.about-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(245,240,232,0.75);
+  margin-bottom: 1rem;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.stat { border-left: 2px solid var(--gold); padding-left: 1.2rem; }
+.stat-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.about-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pole-visual { width: 200px; height: 300px; }
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════════════ */
+.services {
+  padding: 8rem 4rem;
+  background: var(--charcoal-mid);
+}
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.service-card {
+  background: var(--charcoal-mid);
+  padding: 3rem 2.5rem;
+  transition: background var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out);
+}
+.service-card:hover { background: #272727; }
+.service-card:hover::before { width: 100%; }
+.service-icon {
+  width: 40px; height: 40px;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-base);
+}
+.service-card:hover .service-icon { transform: scale(1.1); }
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--cream);
+}
+.service-card p {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+}
+.service-price {
+  margin-top: 1.5rem;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PROVA SOCIAL — DEPOIMENTOS
+═══════════════════════════════════════════════════════════ */
+.testimonials {
+  padding: 8rem 4rem;
+  background: var(--charcoal-dark);
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.testimonials-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.testimonial-card {
+  background: var(--charcoal-dark);
+  padding: 2.5rem 2rem;
+  transition: background var(--transition-base);
+}
+.testimonial-card:hover { background: #202020; }
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1.2rem;
+}
+.testimonial-stars span {
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(245,240,232,0.8);
+  margin-bottom: 1.5rem;
+}
+.testimonial-text::before { content: '\201C'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -0.4em; margin-right: 2px; }
+.testimonial-text::after  { content: '\201D'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -0.4em; margin-left: 2px; }
+.testimonial-author {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.testimonial-role {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FEMME
+═══════════════════════════════════════════════════════════ */
+.femme {
+  background: var(--femme-cream);
+  color: var(--charcoal);
+  overflow: hidden;
+  position: relative;
+}
+.femme-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.femme-left {
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 5rem;
+  position: relative;
+}
+.femme-left::after {
+  content: '';
+  position: absolute;
+  top: 0; right: -1px; bottom: 0;
+  width: 2px;
+  background: var(--femme-rose);
+}
+.femme-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--femme-rose);
+  border: 1px solid var(--femme-rose);
+  padding: 0.4rem 1rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+.femme-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+}
+.femme-left h2 .femme-accent {
+  color: var(--femme-rose);
+  font-style: italic;
+  display: block;
+  font-size: 0.6em;
+}
+.femme-left > p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(245,240,232,0.7);
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.femme-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--femme-rose);
+  border-bottom: 1px solid var(--femme-rose);
+  padding-bottom: 0.3rem;
+  width: fit-content;
+  transition: opacity var(--transition-base), gap var(--transition-base);
+}
+.femme-cta:hover { opacity: 0.7; gap: 1.2rem; }
+.femme-right {
+  background: var(--femme-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 5rem;
+}
+.femme-right .section-label { color: var(--femme-rose); }
+.femme-services { list-style: none; margin-top: 1rem; }
+.femme-services li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(196,118,138,0.2);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  transition: padding-left var(--transition-base);
+}
+.femme-services li:first-child { border-top: 1px solid rgba(196,118,138,0.2); }
+.femme-services li:hover { padding-left: 0.5rem; }
+.femme-services .svc-name { font-weight: 400; }
+.femme-services .svc-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--femme-rose);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BOOKING / AGENDAMENTO
+═══════════════════════════════════════════════════════════ */
+.booking {
+  padding: 9rem 4rem;
+  text-align: center;
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+.booking::before {
+  content: 'SANTIAGO';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 18vw;
+  color: rgba(201,168,76,0.035);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.booking h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+.booking h2 em { color: var(--gold); font-style: italic; }
+.booking > div > p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(245,240,232,0.6);
+  margin-bottom: 3rem;
+  position: relative;
+}
+.booking-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Botões */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  min-height: 52px;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(201,168,76,0.35);
+}
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--whatsapp);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  min-height: 52px;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(37,211,102,0.35);
+}
+.btn-femme {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--femme-rose);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  min-height: 52px;
+}
+.btn-femme:hover {
+  background: #d4899c;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(196,118,138,0.35);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.5rem;
+  background: transparent;
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(245,240,232,0.3);
+  transition: all var(--transition-base);
+  min-height: 52px;
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+.booking-note {
+  margin-top: 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HORAS + CONTACTO
+═══════════════════════════════════════════════════════════ */
+.hours {
+  padding: 7rem 4rem;
+  background: var(--charcoal-dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.hours h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.hours-list { list-style: none; }
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.hours-list .day { color: var(--muted); }
+.hours-list .time { color: var(--cream); font-weight: 500; }
+.hours-list .today .day { color: var(--gold); }
+.hours-list .today .time { color: var(--gold); }
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.contact-icon {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+.contact-item:hover .contact-icon {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+.contact-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.contact-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.contact-value { font-size: 0.9rem; color: var(--cream); font-weight: 400; }
+.contact-link { color: var(--cream); transition: color var(--transition-base); }
+.contact-link:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════ */
+footer {
+  padding: 3rem 4rem;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+.footer-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+.footer-copy { font-size: 0.63rem; color: var(--muted); letter-spacing: 0.08em; }
+.footer-social { display: flex; gap: 1rem; }
+.social-link {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-base), background var(--transition-base);
+  min-width: 44px; min-height: 44px;
+}
+.social-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+.social-link svg { width: 16px; height: 16px; stroke: var(--cream); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ═══════════════════════════════════════════════════════════
+   WHATSAPP FLOAT
+═══════════════════════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 150;
+  width: 58px; height: 58px;
+  background: var(--whatsapp);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  animation: floatPulse 3s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+}
+.whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+.whatsapp-float .float-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(26,26,26,0.95);
+  color: var(--cream);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.whatsapp-float:hover .float-tooltip { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMAÇÕES
+═══════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes floatPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.65); }
+}
+
+/* REVEAL ON SCROLL */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .about { gap: 4rem; }
+  .femme-left, .femme-right { padding: 5rem 3rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav */
+  #nav { padding: 1rem 1.5rem; }
+  #nav.scrolled { padding: 0.75rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero-content { padding: 7rem 1.5rem 5rem; }
+  .hero-title { font-size: clamp(3rem, 14vw, 5rem); }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-btn-primary, .hero-btn-secondary { width: 100%; max-width: 300px; justify-content: center; }
+
+  /* About */
+  .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+  .about-visual { display: none; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+
+  /* Services */
+  .services { padding: 5rem 1.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Testimonials */
+  .testimonials { padding: 5rem 1.5rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Femme */
+  .femme-inner { grid-template-columns: 1fr; }
+  .femme-left, .femme-right { padding: 4rem 1.5rem; }
+  .femme-left::after { display: none; }
+
+  /* Booking */
+  .booking { padding: 5rem 1.5rem; }
+  .booking-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-whatsapp, .btn-femme, .btn-secondary {
+    width: 100%;
+    max-width: 320px;
     justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    z-index: 2;
-  }
-  .hero-eyebrow {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.3s forwards;
-  }
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    opacity: 0;
-    animation: fadeUp 0.9s 0.5s forwards;
-  }
-  .hero-title span { color: var(--gold); font-style: italic; }
-  .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--cream);
-    opacity: 0.7;
-    margin-top: 1.5rem;
-    letter-spacing: 0.08em;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.7s forwards;
-  }
-  .hero-divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 2rem auto;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.9s forwards;
-  }
-  .hero-location {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    opacity: 0;
-    animation: fadeUp 0.9s 1.1s forwards;
-  }
-  .hero-scroll {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0;
-    animation: fadeIn 1s 1.5s forwards;
-  }
-  .hero-scroll span {
-    font-size: 0.55rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text-light);
-  }
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2s infinite;
   }
 
-  /* POLE ICON SVG */
-  .hero-icon {
-    width: 60px;
-    height: 80px;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
+  /* Hours */
+  .hours { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 4rem; }
 
-  /* SECTIONS */
-  section { position: relative; }
+  /* Footer */
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
 
-  .section-label {
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
+  /* WhatsApp float */
+  .whatsapp-float { bottom: 1.5rem; right: 1.5rem; width: 52px; height: 52px; }
+}
 
-  /* ABOUT */
-  .about {
-    padding: 8rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    background: var(--charcoal);
-  }
-  .about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-  .about-text h2 em { color: var(--gold); font-style: italic; }
-  .about-text p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.75);
-    margin-bottom: 1rem;
-  }
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-  .stat {
-    border-left: 2px solid var(--gold);
-    padding-left: 1.2rem;
-  }
-  .stat-num {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-top: 0.3rem;
-  }
-  .about-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .pole-visual {
-    width: 200px;
-    height: 300px;
-  }
-
-  /* SERVICES */
-  .services {
-    padding: 8rem 4rem;
-    background: #222;
-  }
-  .services-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .services-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(201,168,76,0.15);
-    border: 1px solid rgba(201,168,76,0.15);
-  }
-  .service-card {
-    background: #222;
-    padding: 3rem 2.5rem;
-    transition: background 0.3s;
-    cursor: default;
-  }
-  .service-card:hover { background: #2a2a2a; }
-  .service-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 1.5rem;
-  }
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    color: var(--cream);
-  }
-  .service-card p {
-    font-size: 0.8rem;
-    line-height: 1.7;
-    color: var(--text-light);
-    font-weight: 300;
-  }
-  .service-price {
-    margin-top: 1.5rem;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-  }
-
-  /* FEMME */
-  .femme {
-    padding: 0;
-    background: var(--femme-cream);
-    color: var(--charcoal);
-    overflow: hidden;
-    position: relative;
-  }
-  .femme-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
-  }
-  .femme-left {
-    background: var(--charcoal);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6rem 5rem;
-    position: relative;
-  }
-  .femme-left::after {
-    content: '';
-    position: absolute;
-    top: 0; right: -1px; bottom: 0;
-    width: 2px;
-    background: var(--femme-rose);
-  }
-  .femme-badge {
-    display: inline-block;
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--femme-rose);
-    border: 1px solid var(--femme-rose);
-    padding: 0.4rem 1rem;
-    margin-bottom: 2rem;
-  }
-  .femme-left h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--cream);
-    margin-bottom: 0.3rem;
-  }
-  .femme-left h2 .femme-accent {
-    color: var(--femme-rose);
-    font-style: italic;
-    display: block;
-    font-size: 0.6em;
-  }
-  .femme-left p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.7);
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-  .femme-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--femme-rose);
-    text-decoration: none;
-    border-bottom: 1px solid var(--femme-rose);
-    padding-bottom: 0.3rem;
-    width: fit-content;
-    transition: opacity 0.2s;
-  }
-  .femme-cta:hover { opacity: 0.7; }
-  .femme-right {
-    background: var(--femme-cream);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6rem 5rem;
-  }
-  .femme-right .section-label { color: var(--femme-rose); }
-  .femme-services {
-    list-style: none;
-    margin-top: 1rem;
-  }
-  .femme-services li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid rgba(196,118,138,0.2);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--charcoal);
-  }
-  .femme-services li:first-child { border-top: 1px solid rgba(196,118,138,0.2); }
-  .femme-services .svc-name { font-weight: 400; }
-  .femme-services .svc-price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--femme-rose);
-    letter-spacing: 0.05em;
-  }
-  .femme-logo-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  /* BOOKING */
-  .booking {
-    padding: 8rem 4rem;
-    text-align: center;
-    background: var(--charcoal);
-    position: relative;
-    overflow: hidden;
-  }
-  .booking::before {
-    content: 'SANTIAGO';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18vw;
-    color: rgba(201,168,76,0.04);
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-    pointer-events: none;
-  }
-  .booking h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    position: relative;
-  }
-  .booking h2 em { color: var(--gold); font-style: italic; }
-  .booking p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(245,240,232,0.6);
-    margin-bottom: 3rem;
-    position: relative;
-  }
-  .booking-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    position: relative;
-  }
-  .btn-primary {
-    display: inline-block;
-    padding: 1.1rem 3rem;
-    background: var(--gold);
-    color: var(--charcoal);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-  .btn-secondary {
-    display: inline-block;
-    padding: 1.1rem 3rem;
-    background: transparent;
-    color: var(--cream);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(245,240,232,0.3);
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-  .btn-femme {
-    display: inline-block;
-    padding: 1.1rem 3rem;
-    background: var(--femme-rose);
-    color: var(--white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-femme:hover { background: var(--femme-rose-light); transform: translateY(-2px); }
-
-  /* HOURS */
-  .hours {
-    padding: 6rem 4rem;
-    background: #1a1a1a;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-  .hours h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
-  .hours-list { list-style: none; }
-  .hours-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
-  .hours-list .day { color: var(--text-light); }
-  .hours-list .time { color: var(--cream); font-weight: 500; }
-  .contact-block { }
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .contact-icon {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(201,168,76,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .contact-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; }
-  .contact-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 0.3rem;
-  }
-  .contact-value {
-    font-size: 0.9rem;
-    color: var(--cream);
-    font-weight: 400;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 3rem 4rem;
-    background: #111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(201,168,76,0.1);
-  }
-  .footer-brand {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-  }
-  .footer-copy {
-    font-size: 0.65rem;
-    color: var(--text-light);
-    letter-spacing: 0.1em;
-  }
-  .footer-social {
-    display: flex;
-    gap: 1rem;
-  }
-  .social-link {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(201,168,76,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: border-color 0.2s;
-  }
-  .social-link:hover { border-color: var(--gold); }
-  .social-link svg { width: 16px; height: 16px; stroke: var(--cream); fill: none; }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* REVEAL on scroll */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* MARQUEE */
-  .marquee-wrap {
-    background: var(--gold);
-    padding: 0.8rem 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .marquee-track {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-  }
-  .marquee-item {
-    display: inline-block;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    color: var(--charcoal);
-    padding: 0 2.5rem;
-  }
-  .marquee-dot {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: var(--charcoal);
-    border-radius: 50%;
-    vertical-align: middle;
-    margin: 0 0.5rem;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* GOLD LINE */
-  .gold-line {
-    width: 50px;
-    height: 2px;
-    background: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-  .rose-line {
-    width: 50px;
-    height: 2px;
-    background: var(--femme-rose);
-    margin-bottom: 1.5rem;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    nav.scrolled { padding: 0.7rem 1.5rem; }
-    .nav-links { display: none; }
-    .about { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .about-visual { display: none; }
-    .services { padding: 5rem 2rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .femme-inner { grid-template-columns: 1fr; }
-    .femme-left, .femme-right { padding: 4rem 2rem; }
-    .femme-left::after { display: none; }
-    .hours { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 4rem; }
-    .booking { padding: 5rem 2rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-  }
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(2.8rem, 15vw, 4rem); }
+  .about-stats { grid-template-columns: 1fr; }
+}
 </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-logo">Espaço Santiago</div>
-  <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#femme">Femme</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <a href="#agendar" class="nav-cta">Agendar</a>
-</nav>
+  <!-- ═══════════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav id="nav" role="navigation" aria-label="Navegação principal">
+      <a href="/" class="nav-logo" aria-label="Espaço Santiago – Página inicial">Espaço Santiago</a>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <!-- Barber Pole SVG Icon -->
-    <svg class="hero-icon" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Rays -->
-      <line x1="30" y1="40" x2="8" y2="18" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-      <line x1="30" y1="40" x2="52" y2="18" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-      <line x1="30" y1="40" x2="2" y2="32" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
-      <line x1="30" y1="40" x2="58" y2="32" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
-      <line x1="30" y1="40" x2="14" y2="10" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
-      <line x1="30" y1="40" x2="46" y2="10" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
-      <!-- Pole -->
-      <rect x="23" y="12" width="14" height="46" rx="2" fill="var(--charcoal-light)" stroke="var(--gold)" stroke-width="1"/>
-      <!-- Stripes -->
-      <clipPath id="poleClip"><rect x="23" y="12" width="14" height="46" rx="2"/></clipPath>
-      <g clip-path="url(#poleClip)">
-        <line x1="18" y1="12" x2="36" y2="30" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
-        <line x1="18" y1="24" x2="36" y2="42" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
-        <line x1="18" y1="36" x2="36" y2="54" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
-        <line x1="18" y1="48" x2="36" y2="66" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
-      </g>
-      <!-- Cap -->
-      <ellipse cx="30" cy="12" rx="8" ry="4" fill="var(--gold)"/>
-      <!-- Base -->
-      <ellipse cx="30" cy="58" rx="9" ry="4" fill="var(--gold)" opacity="0.7"/>
-    </svg>
-
-    <p class="hero-eyebrow">Barbearia & Salão de Beleza · Aveiro</p>
-    <h1 class="hero-title">Espaço<br><span>Santiago</span></h1>
-    <p class="hero-subtitle">A arte do cuidado. A tradição do detalhe.</p>
-    <div class="hero-divider"></div>
-    <p class="hero-location">Aveiro · Portugal</p>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Descobrir</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Corte de Cabelo</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Barba</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Coloração</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Femme</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Tratamentos</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Sobrancelha</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Espaço Santiago</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Aveiro</span><span class="marquee-dot"></span>
-    <!-- duplicate for loop -->
-    <span class="marquee-item">Corte de Cabelo</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Barba</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Coloração</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Femme</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Tratamentos</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Sobrancelha</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Espaço Santiago</span><span class="marquee-dot"></span>
-    <span class="marquee-item">Aveiro</span><span class="marquee-dot"></span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="sobre">
-  <div class="about-text reveal">
-    <p class="section-label">Sobre Nós</p>
-    <div class="gold-line"></div>
-    <h2>Onde a <em>tradição</em><br>encontra o estilo</h2>
-    <p>O Espaço Santiago é um espaço dedicado ao cuidado masculino e feminino, em Aveiro. Mais do que um corte, é uma experiência — desde o momento em que entra até ao instante em que sai renovado.</p>
-    <p>Com profissionais especializados e um ambiente único, cada visita é pensada ao detalhe.</p>
-    <div class="about-stats">
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Profissionalismo</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Espaços distintos</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">★★★★★</div>
-        <div class="stat-label">Avaliação dos clientes</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Atenção ao detalhe</div>
-      </div>
-    </div>
-  </div>
-  <div class="about-visual reveal">
-    <!-- Decorative pole large -->
-    <svg class="pole-visual" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Rays -->
-      <line x1="100" y1="130" x2="30" y2="50" stroke="rgba(201,168,76,0.25)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="170" y2="50" stroke="rgba(201,168,76,0.25)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="10" y2="90" stroke="rgba(201,168,76,0.18)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="190" y2="90" stroke="rgba(201,168,76,0.18)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="50" y2="20" stroke="rgba(201,168,76,0.12)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="150" y2="20" stroke="rgba(201,168,76,0.12)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="5" y2="120" stroke="rgba(201,168,76,0.1)" stroke-width="2"/>
-      <line x1="100" y1="130" x2="195" y2="120" stroke="rgba(201,168,76,0.1)" stroke-width="2"/>
-      <!-- Pole body -->
-      <rect x="76" y="30" width="48" height="180" rx="4" fill="#2a2a2a" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-      <!-- Stripes -->
-      <clipPath id="bigPoleClip"><rect x="76" y="30" width="48" height="180" rx="4"/></clipPath>
-      <g clip-path="url(#bigPoleClip)">
-        <line x1="60" y1="30" x2="124" y2="94" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
-        <line x1="60" y1="70" x2="124" y2="134" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
-        <line x1="60" y1="110" x2="124" y2="174" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
-        <line x1="60" y1="150" x2="124" y2="214" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
-        <line x1="60" y1="190" x2="124" y2="254" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
-      </g>
-      <!-- Cap -->
-      <ellipse cx="100" cy="30" rx="26" ry="12" fill="var(--gold)"/>
-      <ellipse cx="100" cy="18" rx="16" ry="8" fill="var(--gold-light)"/>
-      <!-- Base -->
-      <ellipse cx="100" cy="210" rx="30" ry="12" fill="rgba(201,168,76,0.4)"/>
-      <rect x="70" y="210" width="60" height="12" rx="2" fill="rgba(201,168,76,0.3)"/>
-      <!-- Stand -->
-      <rect x="82" y="222" width="36" height="18" rx="3" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-    </svg>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="servicos">
-  <div class="services-header reveal">
-    <p class="section-label">Serviços Masculinos</p>
-    <div class="gold-line" style="margin: 1rem auto;"></div>
-    <h2>O Nosso <em style="font-style:italic; color:var(--gold);">Ofício</em></h2>
-  </div>
-
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="12" r="6"/>
-        <path d="M8 38c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
-        <line x1="20" y1="6" x2="20" y2="2"/>
-      </svg>
-      <h3>Corte de Cabelo</h3>
-      <p>Cortes clássicos e modernos, executados com precisão e atenção ao seu estilo pessoal.</p>
-      <div class="service-price">A partir de €12</div>
-    </div>
-
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="20" cy="22" rx="10" ry="8"/>
-        <path d="M14 14c0-3.314 2.686-6 6-6s6 2.686 6 6"/>
-        <line x1="20" y1="30" x2="20" y2="36"/>
-      </svg>
-      <h3>Barba & Bigode</h3>
-      <p>Aparo, modelação e tratamento de barba com técnicas tradicionais de barbearia.</p>
-      <div class="service-price">A partir de €10</div>
-    </div>
-
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 30L20 10l10 20"/>
-        <path d="M12 24h16"/>
-        <circle cx="20" cy="36" r="2"/>
-      </svg>
-      <h3>Sobrancelha na Navalha</h3>
-      <p>Definição perfeita com navalha, para um acabamento limpo e sofisticado.</p>
-      <div class="service-price">A partir de €8</div>
-    </div>
-
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="8" width="28" height="24" rx="3"/>
-        <path d="M6 16h28"/>
-        <circle cx="14" cy="26" r="3"/>
-        <path d="M20 23h10M20 29h8"/>
-      </svg>
-      <h3>Limpeza de Pele</h3>
-      <p>Tratamento facial especializado para renovar e cuidar da pele masculina.</p>
-      <div class="service-price">A partir de €20</div>
-    </div>
-
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 32c4-8 8-12 12-12s8 4 12 12"/>
-        <circle cx="20" cy="14" r="6"/>
-        <path d="M14 20s-2 4 0 8M26 20s2 4 0 8"/>
-      </svg>
-      <h3>Hidratação Capilar</h3>
-      <p>Tratamento intensivo para devolver brilho, força e saúde ao cabelo.</p>
-      <div class="service-price">A partir de €15</div>
-    </div>
-
-    <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="12"/>
-        <path d="M20 8v4M20 28v4M8 20H4M36 20h-4"/>
-        <circle cx="20" cy="20" r="4"/>
-      </svg>
-      <h3>Corte + Barba</h3>
-      <p>O pack completo — corte e barba num só atendimento personalizado.</p>
-      <div class="service-price">A partir de €20</div>
-    </div>
-  </div>
-</section>
-
-<!-- FEMME -->
-<section class="femme" id="femme">
-  <div class="femme-inner">
-    <div class="femme-left reveal">
-      <span class="femme-badge">Espaço Santiago</span>
-      <h2>
-        <span class="femme-accent">Espaço Santiago</span>
-        FEMME
-      </h2>
-      <p>Um espaço criado para a mulher moderna — onde elegância, cuidado e bem-estar se encontram. Cada serviço é uma experiência pensada para si.</p>
-      <a href="#agendar" class="femme-cta">Agendar no Femme →</a>
-    </div>
-
-    <div class="femme-right reveal">
-      <p class="section-label">Serviços Femininos</p>
-      <div class="rose-line"></div>
-      <ul class="femme-services">
-        <li>
-          <span class="svc-name">Corte & Brushing</span>
-          <span class="svc-price">A partir de €20</span>
-        </li>
-        <li>
-          <span class="svc-name">Coloração</span>
-          <span class="svc-price">A partir de €35</span>
-        </li>
-        <li>
-          <span class="svc-name">Madeixas & Luzes</span>
-          <span class="svc-price">A partir de €45</span>
-        </li>
-        <li>
-          <span class="svc-name">Tratamento Capilar</span>
-          <span class="svc-price">A partir de €25</span>
-        </li>
-        <li>
-          <span class="svc-name">Progressiva / Alisamento</span>
-          <span class="svc-price">A partir de €60</span>
-        </li>
-        <li>
-          <span class="svc-name">Penteado & Styling</span>
-          <span class="svc-price">A partir de €30</span>
-        </li>
-        <li>
-          <span class="svc-name">Manicure & Pedicure</span>
-          <span class="svc-price">A partir de €18</span>
-        </li>
+      <ul class="nav-links" role="list">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#femme">Femme</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
+
+      <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Espaço%20Santiago."
+         target="_blank" rel="noopener noreferrer"
+         class="nav-cta" aria-label="Agendar pelo WhatsApp">
+        Agendar Agora
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="dialog" aria-modal="true">
+      <a href="#sobre" class="mobile-link">Sobre</a>
+      <a href="#servicos" class="mobile-link">Serviços</a>
+      <a href="#femme" class="mobile-link">Femme</a>
+      <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+      <a href="#contacto" class="mobile-link">Contacto</a>
+      <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Espaço%20Santiago."
+         target="_blank" rel="noopener noreferrer" class="mobile-cta">
+        Agendar Agora
+      </a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+
+        <!-- Barber Pole SVG -->
+        <svg class="hero-icon" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <line x1="30" y1="40" x2="8"  y2="18" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+          <line x1="30" y1="40" x2="52" y2="18" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+          <line x1="30" y1="40" x2="2"  y2="32" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+          <line x1="30" y1="40" x2="58" y2="32" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+          <line x1="30" y1="40" x2="14" y2="10" stroke="rgba(201,168,76,0.2)" stroke-width="1.5"/>
+          <line x1="30" y1="40" x2="46" y2="10" stroke="rgba(201,168,76,0.2)" stroke-width="1.5"/>
+          <rect x="23" y="12" width="14" height="46" rx="2" fill="var(--charcoal-light)" stroke="var(--gold)" stroke-width="1"/>
+          <clipPath id="poleClip"><rect x="23" y="12" width="14" height="46" rx="2"/></clipPath>
+          <g clip-path="url(#poleClip)">
+            <line x1="18" y1="12" x2="36" y2="30" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
+            <line x1="18" y1="24" x2="36" y2="42" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
+            <line x1="18" y1="36" x2="36" y2="54" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
+            <line x1="18" y1="48" x2="36" y2="66" stroke="var(--gold)" stroke-width="4" opacity="0.8"/>
+          </g>
+          <ellipse cx="30" cy="12" rx="8" ry="4" fill="var(--gold)"/>
+          <ellipse cx="30" cy="58" rx="9" ry="4" fill="var(--gold)" opacity="0.7"/>
+        </svg>
+
+        <p class="hero-eyebrow">Barbearia Premium & Salão de Beleza · Aveiro</p>
+
+        <!-- H1 -->
+        <h1 class="hero-title">Espaço<br><span>Santiago</span></h1>
+
+        <p class="hero-value">
+          A arte do cuidado. A tradição do detalhe.<br>Barbearia & Salão de Beleza em Aveiro.
+        </p>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <div class="hero-ctas">
+          <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Espaço%20Santiago."
+             target="_blank" rel="noopener noreferrer"
+             class="hero-btn-primary"
+             aria-label="Agendar pelo WhatsApp — resposta rápida">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.823L0 24l6.389-1.5A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.373l-.36-.214-3.727.977.996-3.636-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="hero-btn-secondary">Ver Serviços</a>
+        </div>
+        <p class="hero-microcopy">Resposta rápida · Sem espera · Aveiro</p>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Descobrir</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Corte de Cabelo</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Barba</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Coloração</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Femme</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Tratamentos</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Sobrancelha</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Espaço Santiago</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Aveiro</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Corte de Cabelo</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Barba</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Coloração</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Femme</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Tratamentos</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Sobrancelha</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Espaço Santiago</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Aveiro</span><span class="marquee-dot"></span>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- BOOKING -->
-<section class="booking" id="agendar">
-  <div class="reveal">
-    <p class="section-label" style="position:relative;">Reservar</p>
-    <div class="gold-line" style="margin: 1rem auto; position:relative;"></div>
-    <h2 style="position:relative;">Agende a sua <em>visita</em></h2>
-    <p style="position:relative;">Sem esperas. Com a atenção que merece.</p>
-    <div class="booking-buttons">
-      <a href="https://www.instagram.com/espaco_santiago_aveiro" target="_blank" class="btn-primary">Espaço Santiago</a>
-      <a href="https://www.instagram.com/espaco_santiago_femme?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-femme">Santiago Femme</a>
-      <a href="https://wa.me/351938162855" target="_blank" class="btn-secondary">WhatsApp</a>
+    <!-- ABOUT -->
+    <section class="about" id="sobre" aria-labelledby="about-title">
+      <div class="about-text reveal">
+        <p class="section-label">Sobre Nós</p>
+        <div class="gold-line" aria-hidden="true"></div>
+        <h2 id="about-title">Onde a <em>tradição</em><br>encontra o estilo</h2>
+        <p>O Espaço Santiago é um espaço dedicado ao cuidado masculino e feminino, em Aveiro. Mais do que um corte, é uma experiência — desde o momento em que entra até ao instante em que sai renovado.</p>
+        <p>Com profissionais especializados e um ambiente único, cada visita é pensada ao detalhe.</p>
+        <div class="about-stats" aria-label="Números do Espaço Santiago">
+          <div class="stat">
+            <div class="stat-num" aria-label="Cem por cento">100%</div>
+            <div class="stat-label">Profissionalismo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="Dois espaços">2</div>
+            <div class="stat-label">Espaços distintos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="Cinco estrelas">★★★★★</div>
+            <div class="stat-label">Avaliação dos clientes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="Atenção ilimitada">∞</div>
+            <div class="stat-label">Atenção ao detalhe</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal" aria-hidden="true">
+        <svg class="pole-visual" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="100" y1="130" x2="30"  y2="50"  stroke="rgba(201,168,76,0.25)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="170" y2="50"  stroke="rgba(201,168,76,0.25)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="10"  y2="90"  stroke="rgba(201,168,76,0.18)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="190" y2="90"  stroke="rgba(201,168,76,0.18)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="50"  y2="20"  stroke="rgba(201,168,76,0.12)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="150" y2="20"  stroke="rgba(201,168,76,0.12)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="5"   y2="120" stroke="rgba(201,168,76,0.08)" stroke-width="2"/>
+          <line x1="100" y1="130" x2="195" y2="120" stroke="rgba(201,168,76,0.08)" stroke-width="2"/>
+          <rect x="76" y="30" width="48" height="180" rx="4" fill="#2a2a2a" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <clipPath id="bigPoleClip"><rect x="76" y="30" width="48" height="180" rx="4"/></clipPath>
+          <g clip-path="url(#bigPoleClip)">
+            <line x1="60" y1="30"  x2="124" y2="94"  stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
+            <line x1="60" y1="70"  x2="124" y2="134" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
+            <line x1="60" y1="110" x2="124" y2="174" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
+            <line x1="60" y1="150" x2="124" y2="214" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
+            <line x1="60" y1="190" x2="124" y2="254" stroke="var(--gold)" stroke-width="12" opacity="0.7"/>
+          </g>
+          <ellipse cx="100" cy="30"  rx="26" ry="12" fill="var(--gold)"/>
+          <ellipse cx="100" cy="18"  rx="16" ry="8"  fill="var(--gold-light)"/>
+          <ellipse cx="100" cy="210" rx="30" ry="12" fill="rgba(201,168,76,0.4)"/>
+          <rect x="70" y="210" width="60" height="12" rx="2" fill="rgba(201,168,76,0.3)"/>
+          <rect x="82" y="222" width="36" height="18" rx="3" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicos" aria-labelledby="services-title">
+      <div class="services-header reveal">
+        <p class="section-label">Serviços Masculinos</p>
+        <div class="gold-line" style="margin: 1rem auto;" aria-hidden="true"></div>
+        <h2 id="services-title">O Nosso <em style="font-style:italic; color:var(--gold);">Ofício</em></h2>
+      </div>
+
+      <div class="services-grid reveal">
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><circle cx="20" cy="12" r="6"/><path d="M8 38c0-6.627 5.373-12 12-12s12 5.373 12 12"/><line x1="20" y1="6" x2="20" y2="2"/></svg>
+          <h3>Corte de Cabelo</h3>
+          <p>Cortes clássicos e modernos, executados com precisão e atenção ao seu estilo pessoal.</p>
+          <div class="service-price">A partir de €12</div>
+        </article>
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><ellipse cx="20" cy="22" rx="10" ry="8"/><path d="M14 14c0-3.314 2.686-6 6-6s6 2.686 6 6"/><line x1="20" y1="30" x2="20" y2="36"/></svg>
+          <h3>Barba & Bigode</h3>
+          <p>Aparo, modelação e tratamento de barba com técnicas tradicionais de barbearia.</p>
+          <div class="service-price">A partir de €10</div>
+        </article>
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><path d="M10 30L20 10l10 20"/><path d="M12 24h16"/><circle cx="20" cy="36" r="2"/></svg>
+          <h3>Sobrancelha na Navalha</h3>
+          <p>Definição perfeita com navalha, para um acabamento limpo e sofisticado.</p>
+          <div class="service-price">A partir de €8</div>
+        </article>
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M6 16h28"/><circle cx="14" cy="26" r="3"/><path d="M20 23h10M20 29h8"/></svg>
+          <h3>Limpeza de Pele</h3>
+          <p>Tratamento facial especializado para renovar e cuidar da pele masculina.</p>
+          <div class="service-price">A partir de €20</div>
+        </article>
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><path d="M8 32c4-8 8-12 12-12s8 4 12 12"/><circle cx="20" cy="14" r="6"/><path d="M14 20s-2 4 0 8M26 20s2 4 0 8"/></svg>
+          <h3>Hidratação Capilar</h3>
+          <p>Tratamento intensivo para devolver brilho, força e saúde ao cabelo.</p>
+          <div class="service-price">A partir de €15</div>
+        </article>
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><circle cx="20" cy="20" r="12"/><path d="M20 8v4M20 28v4M8 20H4M36 20h-4"/><circle cx="20" cy="20" r="4"/></svg>
+          <h3>Corte + Barba</h3>
+          <p>O pack completo — corte e barba num só atendimento personalizado.</p>
+          <div class="service-price">A partir de €20</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL — DEPOIMENTOS -->
+    <section class="testimonials" id="depoimentos" aria-labelledby="test-title">
+      <div class="testimonials-header reveal">
+        <p class="section-label">Prova Social</p>
+        <div class="gold-line" style="margin: 1rem auto;" aria-hidden="true"></div>
+        <h2 id="test-title">O que dizem os nossos <em style="font-style:italic; color:var(--gold);">clientes</em></h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <article class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★★★★★</span>
+          </div>
+          <p class="testimonial-text">Melhor barbearia de Aveiro, sem dúvida. O ambiente é incrível e a qualidade do corte é sempre perfeita. Já não vou a outro sítio.</p>
+          <div class="testimonial-author">Miguel R.</div>
+          <div class="testimonial-role">Cliente desde 2022</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★★★★★</span>
+          </div>
+          <p class="testimonial-text">Fui ao Espaço Santiago Femme pela primeira vez e fiquei rendida. Profissionalismo e atenção ao detalhe que raramente encontro noutros salões.</p>
+          <div class="testimonial-author">Ana S.</div>
+          <div class="testimonial-role">Santiago Femme</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★★★★★</span>
+          </div>
+          <p class="testimonial-text">Atendimento personalizado, espaço elegante e resultado que fala por si. Recomendo vivamente a todos que querem mais do que um simples corte.</p>
+          <div class="testimonial-author">João P.</div>
+          <div class="testimonial-role">Cliente frequente</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEMME -->
+    <section class="femme" id="femme" aria-labelledby="femme-title">
+      <div class="femme-inner">
+        <div class="femme-left reveal">
+          <span class="femme-badge" aria-label="Divisão feminina">Espaço Santiago</span>
+          <h2 id="femme-title">
+            <span class="femme-accent">Espaço Santiago</span>
+            FEMME
+          </h2>
+          <p>Um espaço criado para a mulher moderna — onde elegância, cuidado e bem-estar se encontram. Cada serviço é uma experiência pensada para si.</p>
+          <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20no%20Espaço%20Santiago%20Femme."
+             target="_blank" rel="noopener noreferrer"
+             class="femme-cta">
+            Agendar no Femme →
+          </a>
+        </div>
+        <div class="femme-right reveal">
+          <p class="section-label">Serviços Femininos</p>
+          <div class="rose-line" aria-hidden="true"></div>
+          <ul class="femme-services" aria-label="Lista de serviços femininos">
+            <li><span class="svc-name">Corte & Brushing</span><span class="svc-price">A partir de €20</span></li>
+            <li><span class="svc-name">Coloração</span><span class="svc-price">A partir de €35</span></li>
+            <li><span class="svc-name">Madeixas & Luzes</span><span class="svc-price">A partir de €45</span></li>
+            <li><span class="svc-name">Tratamento Capilar</span><span class="svc-price">A partir de €25</span></li>
+            <li><span class="svc-name">Progressiva / Alisamento</span><span class="svc-price">A partir de €60</span></li>
+            <li><span class="svc-name">Penteado & Styling</span><span class="svc-price">A partir de €30</span></li>
+            <li><span class="svc-name">Manicure & Pedicure</span><span class="svc-price">A partir de €18</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="booking" id="agendar" aria-labelledby="booking-title">
+      <div class="reveal">
+        <p class="section-label" style="position:relative;">Reservar</p>
+        <div class="gold-line" style="margin: 1rem auto; position:relative;" aria-hidden="true"></div>
+        <h2 id="booking-title" style="position:relative;">Agende a sua <em>visita</em></h2>
+        <p>Sem esperas. Com a atenção que merece.</p>
+        <div class="booking-buttons">
+          <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Espaço%20Santiago."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-whatsapp"
+             aria-label="Agendar pelo WhatsApp — resposta rápida">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.823L0 24l6.389-1.5A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.373l-.36-.214-3.727.977.996-3.636-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+            WhatsApp — Resposta Rápida
+          </a>
+          <a href="https://www.instagram.com/espaco_santiago_aveiro"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-primary">
+            Instagram Santiago
+          </a>
+          <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20no%20Espaço%20Santiago%20Femme."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-femme">
+            Agendar Femme
+          </a>
+        </div>
+        <p class="booking-note">Resposta em menos de 24h · Atendimento personalizado</p>
+      </div>
+    </section>
+
+    <!-- HOURS + CONTACT -->
+    <section class="hours" id="contacto" aria-labelledby="hours-title">
+      <div class="reveal">
+        <p class="section-label">Horário</p>
+        <div class="gold-line" aria-hidden="true"></div>
+        <h3 id="hours-title">Estamos <em style="font-style:italic; color:var(--gold);">aqui</em> para si</h3>
+        <ul class="hours-list" style="margin-top: 2rem;" aria-label="Horário de funcionamento">
+          <li><span class="day">Segunda-feira</span><span class="time">09h – 19h</span></li>
+          <li><span class="day">Terça-feira</span><span class="time">09h – 19h</span></li>
+          <li><span class="day">Quarta-feira</span><span class="time">09h – 19h</span></li>
+          <li><span class="day">Quinta-feira</span><span class="time">09h – 19h</span></li>
+          <li><span class="day">Sexta-feira</span><span class="time">09h – 19h</span></li>
+          <li><span class="day">Sábado</span><span class="time">09h – 18h</span></li>
+          <li><span class="day">Domingo</span><span class="time" style="color: var(--muted);">Fechado</span></li>
+        </ul>
+      </div>
+
+      <div class="contact-block reveal" aria-label="Informações de contacto">
+        <p class="section-label">Contacto</p>
+        <div class="gold-line" aria-hidden="true"></div>
+        <h3 style="margin-bottom: 2rem;">Fale <em style="font-style:italic; color:var(--gold);">connosco</em></h3>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Morada</div>
+            <div class="contact-value">Aveiro, Portugal</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Telefone / WhatsApp</div>
+            <a href="https://wa.me/351938162855" target="_blank" rel="noopener noreferrer" class="contact-value contact-link">938 162 855</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <a href="https://www.instagram.com/espaco_santiago_aveiro" target="_blank" rel="noopener noreferrer" class="contact-value contact-link">@espaco_santiago_aveiro</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Instagram Femme</div>
+            <a href="https://www.instagram.com/espaco_santiago_femme" target="_blank" rel="noopener noreferrer" class="contact-value contact-link">@espaco_santiago_femme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Espaço Santiago · Aveiro</div>
+    <div class="footer-copy">© 2026 Espaço Santiago. Todos os direitos reservados.</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/espaco_santiago_aveiro" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Espaço Santiago">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://wa.me/351938162855" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp Espaço Santiago">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- HOURS + CONTACT -->
-<section class="hours" id="contacto">
-  <div class="reveal">
-    <p class="section-label">Horário</p>
-    <div class="gold-line"></div>
-    <h3>Estamos <em style="font-style:italic; color:var(--gold);">aqui</em> para si</h3>
-    <ul class="hours-list" style="margin-top: 2rem;">
-      <li><span class="day">Segunda-feira</span><span class="time">09h – 19h</span></li>
-      <li><span class="day">Terça-feira</span><span class="time">09h – 19h</span></li>
-      <li><span class="day">Quarta-feira</span><span class="time">09h – 19h</span></li>
-      <li><span class="day">Quinta-feira</span><span class="time">09h – 19h</span></li>
-      <li><span class="day">Sexta-feira</span><span class="time">09h – 19h</span></li>
-      <li><span class="day">Sábado</span><span class="time">09h – 18h</span></li>
-      <li><span class="day">Domingo</span><span class="time" style="color: var(--text-light);">Fechado</span></li>
-    </ul>
-  </div>
-
-  <div class="contact-block reveal">
-    <p class="section-label">Contacto</p>
-    <div class="gold-line"></div>
-    <h3 style="margin-bottom: 2rem;">Fale <em style="font-style:italic; color:var(--gold);">connosco</em></h3>
-
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div>
-        <div class="contact-label">Morada</div>
-        <div class="contact-value">Aveiro, Portugal</div>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z"/></svg>
-      </div>
-      <div>
-        <div class="contact-label">Telefone / WhatsApp</div>
-        <div class="contact-value">938 162 855</div>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </div>
-      <div>
-        <div class="contact-label">Instagram</div>
-        <div class="contact-value">@espaco_santiago_aveiro</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Espaço Santiago · Aveiro</div>
-  <div class="footer-copy">© 2026 Espaço Santiago. Todos os direitos reservados.</div>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/espaco_santiago_aveiro" target="_blank" class="social-link">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-  </div>
-</footer>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/351938162855?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Espaço%20Santiago."
+     target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Agendar pelo WhatsApp">
+    <span class="float-tooltip">Agendar agora</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.823L0 24l6.389-1.5A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.373l-.36-.214-3.727.977.996-3.636-.234-.374A9.818 9.818 0 1112 21.818z"/>
+    </svg>
+  </a>
 
 <script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+/* ═══════════════════════════════════════════════════════════
+   NAV SCROLL
+═══════════════════════════════════════════════════════════ */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+/* ═══════════════════════════════════════════════════════════
+   HAMBURGER MENU
+═══════════════════════════════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta');
+
+const toggleMenu = (open) => {
+  hamburger.classList.toggle('active', open);
+  mobileMenu.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+};
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('open');
+  toggleMenu(!isOpen);
+});
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => toggleMenu(false));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) toggleMenu(false);
+});
+
+/* ═══════════════════════════════════════════════════════════
+   REVEAL ON SCROLL
+═══════════════════════════════════════════════════════════ */
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
+
+/* ═══════════════════════════════════════════════════════════
+   HIGHLIGHT TODAY IN HOURS
+═══════════════════════════════════════════════════════════ */
+const days = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+const today = days[new Date().getDay()];
+document.querySelectorAll('.hours-list li').forEach(li => {
+  const daySpan = li.querySelector('.day');
+  if (daySpan && daySpan.textContent.trim() === today) li.classList.add('today');
+});
 </script>
 </body>
 </html>
